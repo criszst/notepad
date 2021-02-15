@@ -1,11 +1,12 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron')
 
+/* const fs = require('fs') */
+
 const { save } = require('./menuTools')
 
 const isMac = process.plataform === "darwin"
 
 const menuTemplate = [
-    // { role: 'appMenu' }
     ...(isMac ? [{
         label: app.name,
         submenu: [
@@ -25,12 +26,13 @@ const menuTemplate = [
         label: 'File',
         submenu: [
             { label: 'New File', click: async() => console.log('Click in "New File"') },
+            { type: 'separator' },
             { label: 'Save', click: async() => save() },
+            { label: 'Fechar', role: 'quit' },
             { type: 'separator' },
             isMac ? { role: 'close' } : { role: 'quit' },
         ]
     },
-    // { role: 'editMenu' }
     {
         label: 'Edit',
         submenu: [
@@ -59,7 +61,7 @@ const menuTemplate = [
             ])
         ]
     },
-    // { role: 'viewMenu' }
+
     {
         label: 'View',
         submenu: [
@@ -72,7 +74,7 @@ const menuTemplate = [
             { role: 'togglefullscreen' }
         ]
     },
-    // { role: 'windowMenu' }
+
     {
         label: 'Tab',
         submenu: [
