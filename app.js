@@ -1,7 +1,6 @@
-const { app, BrowserWindow, Menu, ipcMain } = require('electron')
+const { app, BrowserWindow, Menu, ipcMain} = require('electron')
 
 const menuTemplate = require('./menu')
-
 function createWindow() {
     const win = new BrowserWindow({
         width: 800,
@@ -20,6 +19,7 @@ function createWindow() {
 
     win.loadFile('src/pages/index.html')
 }
+
 
 app.on('ready', createWindow)
 

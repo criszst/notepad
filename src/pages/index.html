@@ -4,58 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" /> -->
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="../lib/mdb/css/mdb.min.css" rel="stylesheet" />
-
-    <!--  <link href="~/lib/animate/animate.min.css" rel="stylesheet" /> -->
-
-    <!-- <link href="~/lib/hover/css/hover-min.css" rel="stylesheet" media="all"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
 
     <link href="../pageTools/style/website.css" rel="stylesheet">
 
     <title>Notepad</title>
 </head>
 
-<body style="height: 1000px;">
+<body>
+    
+    <textarea class="form-control textarea" rows="30" id="textMain"></textarea>
 
-
-    <textarea class="form-control textarea" name="textArea" id="textMain" autocomplete="on"></textarea>
-
-    <!-- cols="60" rows="17" -->
-
-    <!-- JQuery -->
-    <script src="../../src/lib/jquery/dist/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
-    <script src="../../src/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="../../src/lib/jquery-validation/dist/additional-methods.min.js"></script>
-    <script src="../../src/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- MDB -->
-    <script src="../lib/mdb/js/mdb.min.js"></script>
-
-    <!-- Web Script -->
-    <script type="text/javascript" src="../pageTools/script/main.js"></script>
-    <!-- <script src="../../menuTools.js"></script> -->
-
-    <script>
-        window.jQuery = window.$ = jQuery;
-
-        $(document).ready(function() {
-            console.log("There is ok...");
-        });
-    </script>
 </body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script src="../../node_modules/darkmode-js/src/darkmode.js"></script>
+<script>
+const options = {
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true,
+}
+
+const darkmode = new Darkmode(options);
+
+darkmode.showWidget()
+</script>
+
+<script src="../pageTools/script/renderer.js"></script>
+
+
+<script type="text/javascript" src="../pageTools/script/renderer.js"></script>
+
+<script type="text/javascript" src="../pageTools/script/main.js"></script>
+
 
 </html>
