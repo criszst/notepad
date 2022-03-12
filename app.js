@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, ipcMain} = require('electron')
+const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron')
 
 const menuTemplate = require('./menu')
 function createWindow() {
@@ -14,11 +14,14 @@ function createWindow() {
         fullscreenable: true,
     })
 
+    shell.beep()
+
     let menu = Menu.buildFromTemplate(menuTemplate)
     Menu.setApplicationMenu(menu)
 
     win.loadFile('src/pages/index.html')
 }
+
 
 
 app.on('ready', createWindow)
