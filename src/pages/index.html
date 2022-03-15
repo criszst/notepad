@@ -11,14 +11,12 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
 
-    <link href="../pageTools/style/website.css" rel="stylesheet">
+    <link href="../assets/style/website.css" rel="stylesheet">
 
-    <title>Notepad</title>
+    <title>Bloco de Notas</title>
 </head>
 
 <body>
-
-<!--   <button id="btnText">Criar Txt</button> -->
     
     <textarea class="form-control textarea" rows="30" id="textMain"></textarea>
 
@@ -26,10 +24,13 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script src="../assets/script/renderer.js"></script>
 
-<script src="../../node_modules/darkmode-js/src/darkmode.js"></script>
+
+
 <script>
+require('darkmode-js')
+
 const options = {
   saveInCookies: true,
   label: '🌓',
@@ -40,18 +41,5 @@ const darkmode = new Darkmode(options);
 
 darkmode.showWidget()
 </script>
-
-<!-- <script>
-
-  navigator.onLine === true ? alert('true') : alert('false')
-</script> -->
-
-<script src="../pageTools/script/renderer.js"></script>
-
-
-<script type="text/javascript" src="../pageTools/script/renderer.js"></script>
-
-<script type="text/javascript" src="../pageTools/script/main.js"></script>
-
 
 </html>

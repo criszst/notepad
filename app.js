@@ -1,14 +1,15 @@
-const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron')
+const { app, BrowserWindow, Menu, ipcMain, shell, webContents } = require('electron')
 
 const menuTemplate = require('./menu')
 function createWindow() {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
+        webContents: BrowserWindow.webContents,
         webPreferences: {
             nodeIntegration: true,
             textAreasAreResizable: false,
-            spellcheck: true,
+            contextIsolation: false,
         },
         movable: true,
         fullscreenable: true,
@@ -20,11 +21,24 @@ function createWindow() {
     Menu.setApplicationMenu(menu)
 
     win.loadFile('src/pages/index.html')
+
+    win.webContents.on('did-finish-load', () => {
+        let code = `let txtMain = document.getElementById('textMain')
+                    console.log(textMain)
+        `
+
+        win.webContents.executeJavaScript(code);
+    })
 }
 
 
 
 app.on('ready', createWindow)
+
+ipcMain.on('txtInArea', function(event, arg) {
+    console.log(arg)
+    event.returnValue = 'aa'
+  });
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {

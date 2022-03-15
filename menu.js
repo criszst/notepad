@@ -1,9 +1,7 @@
-const { app, BrowserWindow, Menu, ipcMain } = require('electron')
+const { app } = require('electron')
 
-/* const fs = require('fs') */
 
-const {save, darkMode} = require('./menuTools')
-/* const darkMode = require('./src/pageTools/script/renderer.js') */
+const {save} = require('./menuTools')
 
 const menuTemplate = [
     {
@@ -47,7 +45,6 @@ const menuTemplate = [
             { role: 'minimize' },
             { role: 'zoom' },
             { type: 'separator' },
-  /*           { label: 'Modo Escuro', click: async () => darkMode() }, */
         ]
     },
 ]
