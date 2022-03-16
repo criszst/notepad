@@ -1,15 +1,21 @@
-const { app } = require('electron')
+const { app, ipcMain } = require('electron')
 
+const saveFile = require('./menuTools')
 
-const {save} = require('./menuTools')
+/* function saveTxt() {
+  ipcMain.on('txtInArea', function(event, arg) {
+        console.log(arg)
+        saveFile(arg)
+        event.returnValue = 'aa'
+      });
+} */
 
 const menuTemplate = [
     {
         label: 'Arquivo',
         submenu: [
-            { label: 'New File', click: async () => console.log('Click in "New File"') },
+            { label: 'Novo Arquivo', click: async () => console.log('Click in "New File"') },
             { type: 'separator' },
-            { label: 'Save', click: async () => save() },
             { type: 'separator' },
             { label: 'Fechar', click: async () => app.quit() },
         ]
