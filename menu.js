@@ -24,6 +24,7 @@ const menuTemplate = [
         label: 'Editar',
         submenu: [
             { role: 'undo' },
+            
             { role: 'redo' },
             { type: 'separator' },
             { role: 'cut' },
