@@ -18,6 +18,11 @@ body {
     background-color: white;
 }
 
+.bodyLogin {
+    background: rgb(58,30,107);
+    background: linear-gradient(90deg, rgba(58,30,107,1) 12%, rgba(255,0,155,1) 100%);
+}
+
 .center {
     justify-content: center;
     display: flex;

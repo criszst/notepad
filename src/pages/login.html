@@ -13,25 +13,27 @@
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet" />
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
     <link href="../assets/style/website.css" rel="stylesheet">
 
     <title>Login</title>
 </head>
 
-<body>
-    <!-- Button trigger modal -->
+<body class="bodyLogin">
     <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#login"
         style="visibility: hidden;" id="btnModal"></button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="login" data-mdb-backdrop="static"
-        data-mdb-keyboard="false" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+    <div class="modal animate__animated animate__fadeInLeft" id="login" data-mdb-backdrop="static"
+        data-mdb-keyboard="false" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true" >
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="loginLabel">Login</h5>
                 </div>
 
                 <div class="modal-body">
@@ -40,8 +42,8 @@
                         <label class="form-label" for="password">Senha</label>
                       </div>
 
-                      <div style="margin-top: 5%">
-                        <button class="btn btn-success btn-rounded" type="submit" id="btnLogin">Submit form</button>
+                      <div style="margin-top: 5%;">
+                        <button class="btn btn-success btn-rounded" style="margin-left: 81%;" id="btnLogin">Entrar</button>
                       </div>
 
                 </div>
@@ -53,8 +55,8 @@
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
 
-<script type="module" src="../assets/script/renderer.js"></script>
-
+<script type="text/javascript" src="../assets/script/renderer.js"></script>
+<script src="../assets/script/login.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function (e) {
         document.getElementById('btnModal').click()
