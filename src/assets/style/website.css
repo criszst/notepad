@@ -4,13 +4,12 @@
 }
 
 ::selection {
-    background-color: rgb(28, 172, 182);
-    color: rgb(80, 28, 165);
+    background-color: rgb(19, 20, 20);
+    color: rgb(192, 178, 216);
 }
 
 body, html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {

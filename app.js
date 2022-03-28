@@ -22,7 +22,7 @@ function createWindow() {
     let menu = Menu.buildFromTemplate(menuTemplate)
     Menu.setApplicationMenu(menu)
 
-    win.loadFile('src/pages/index.html')
+    win.loadFile('src/pages/login.html')
 
     win.webContents.on('did-finish-load', () => {
         let code = `
@@ -49,7 +49,7 @@ app.on('ready', createWindow)
 
 ipcMain.on('txtInArea', function(event, arg) {
         saveFile(arg)
-        event.returnValue = 'aa'
+        event.returnValue = console.log(event);
 });
 
 
