@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, ipcMain, shell, webContents } = require('electron')
+const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron')
 
 const menuTemplate = require('./menu')
 const saveFile = require('./menuTools')
@@ -36,7 +36,7 @@ function createWindow() {
                 console.log('a')
            } 
            else if (e.ctrlKey && e.key.toLowerCase() === 's' && txtMain.value == '') {
-               alert('n tem nd para salvar')
+               alert('digite alguma coisa2')
            }
         }) `
 
@@ -49,7 +49,6 @@ app.on('ready', createWindow)
 
 ipcMain.on('txtInArea', function(event, arg) {
         saveFile(arg)
-        event.returnValue = console.log(event);
 });
 
 

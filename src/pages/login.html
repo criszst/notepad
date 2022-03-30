@@ -40,6 +40,7 @@
                     <div class="form-outline">
                         <input type="password" id="pssword" class="form-control" />
                         <label class="form-label" for="password">Senha</label>
+                        <div class="invalid-feedback" style="margin-top: 1.5%;" id="invalidPssword">Senha incorreta.</div>
                       </div>
 
                       <div style="margin-top: 5%;">
@@ -57,11 +58,11 @@
 
 <script type="text/javascript" src="../assets/script/renderer.js"></script>
 <script src="../assets/script/login.js"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function (e) {
         document.getElementById('btnModal').click()
     })
-
 </script>
 
 </html>

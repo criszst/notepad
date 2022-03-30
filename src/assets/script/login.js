@@ -1,5 +1,6 @@
 document.getElementById('btnLogin').addEventListener('click', () => {
     const pssword = document.getElementById('pssword')
+    const invalid = document.getElementById('invalidPssword')
     const modal = document.getElementById('login')
     
     if (pssword.value === '123') {
@@ -11,6 +12,7 @@ document.getElementById('btnLogin').addEventListener('click', () => {
             window.location.assign('index.html')
         }, 1200)
     } else {
-       console.log('senha errada')
+        invalid.style.display = 'block'
+        invalid.classList.add('animate__animated', 'animate__headShake')
     }
 })
