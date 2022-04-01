@@ -1,3 +1,5 @@
+/* PRINCIPAL */
+
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +36,15 @@ body {
 }
 
 .darkmode-toggle {
-    z-index: 1000;
+    z-index: 10;
+}
+
+.darkmode--activated > #editor {
+    color: rgb(214, 214, 214);
+}
+
+strong {
+    color: white
 }
 
 .center {
@@ -46,7 +56,7 @@ body {
 
 /* ANIMATION */
 .loadingScreen {
-    animation: loadingScreen 3s linear normal;
+    animation: loadingScreen 2s linear normal;
 }
 
 @keyframes loadingScreen {
