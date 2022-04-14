@@ -1,7 +1,7 @@
-const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron')
+const { app, BrowserWindow, Menu, ipcMain, shell, ipcRenderer } = require('electron');
 
-const menuTemplate = require('./menu')
-const saveFile = require('./menuTools')
+const menuTemplate = require('./menu');
+const saveFile = require('./menuTools');
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -15,52 +15,34 @@ function createWindow() {
         },
         movable: true,
         fullscreenable: true,
-    })
+    });
 
-    shell.beep()
+    shell.beep();
 
-    let menu = Menu.buildFromTemplate(menuTemplate)
-    Menu.setApplicationMenu(menu)
+    let menu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(menu);
 
-    win.loadFile('src/pages/login.html')
-
-    win.webContents.on('did-finish-load', () => {
-        let code = `
-        const ipcRenderer = require('electron').ipcRenderer
-
-        let txtMain = document.getElementById('textMain')
-
-        document.addEventListener('keydown', function(e) {
-           if (e.ctrlKey && e.key.toLowerCase() === 's' && txtMain.value !== '') {
-                ipcRenderer.sendSync('txtInArea', txtMain.value)
-                console.log('a')
-           } 
-           else if (e.ctrlKey && e.key.toLowerCase() === 's' && txtMain.value == '') {
-               alert('digite alguma coisa2')
-           }
-        }) `
-
-        win.webContents.executeJavaScript(code);
-    })
+    win.loadFile('src/pages/login.html');
 }
 
 
-app.on('ready', createWindow)
+app.on('ready', createWindow);
 
 ipcMain.on('txtInArea', function(event, arg) {
-        saveFile(arg)
+        saveFile(arg);
+        console.log(arg);
 });
 
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
-        app.quit()
+        app.quit();
     }
-})
+});
 
 
 app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow()
+        createWindow();
     }
-})
+});
