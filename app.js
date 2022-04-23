@@ -1,13 +1,12 @@
-const { app, BrowserWindow, Menu, ipcMain, shell, ipcRenderer } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron');
 
-const menuTemplate = require('./menu');
-const saveFile = require('./menuTools');
+const menuTemplate = require('./src/menu/menu');
+const { saveFile}  = require('./src/menu/menuTools');
 
 function createWindow() {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
-        webContents: BrowserWindow.webContents,
         webPreferences: {
             nodeIntegration: true,
             textAreasAreResizable: false,
@@ -23,16 +22,15 @@ function createWindow() {
     Menu.setApplicationMenu(menu);
 
     win.loadFile('src/pages/login.html');
-}
 
+}
 
 app.on('ready', createWindow);
 
-ipcMain.on('txtInArea', function(event, arg) {
-        saveFile(arg);
-        console.log(arg);
+ ipcMain.on('txtInArea', function(event, arg) {
+     console.log(arg);
+     saveFile(`${arg}`);
 });
-
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -46,3 +44,5 @@ app.on('activate', () => {
         createWindow();
     }
 });
+
+module.exports = createWindow;
