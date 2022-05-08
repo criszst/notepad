@@ -1,8 +1,8 @@
 const fs = require('fs');
 const dialog = require('electron').dialog;
 
-module.exports.saveFile = (StringForTxt) => {
-    dialog.showSaveDialog({
+module.exports.saveFile = async (StringForTxt) => {
+   await dialog.showSaveDialog({
         filters: [
             {
                 name: 'txt',

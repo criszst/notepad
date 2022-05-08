@@ -1,5 +1,6 @@
 node_modules/
 
 # ---
+notepad-win32-x64/
 package-lock.json
 package.json

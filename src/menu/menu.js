@@ -1,7 +1,6 @@
-const { loadFile } = require('./menuTools');
-const ipcRenderer = require('electron').ipcRenderer;
 const fs = require('fs');
 const dialog = require('electron').dialog;
+const crypto = require('crypto-js');
 
 const menuTemplate = [
     {
@@ -23,9 +22,12 @@ const menuTemplate = [
                         ]
                     }).then((file) => {
                         console.log(file.filePaths);
-
                         const txt = fs.readFileSync(`${file.filePaths.toString()}`).toString();
-                        browserWindow.webContents.send('loadFile', txt);
+
+                        let toByte = crypto.AES.decrypt(txt, 'Ha7vWAzxAe2VPEv5s/SrWsFwATIWNxFHYp+eEcWnyHI=');
+                        let originalTxt = toByte.toString(crypto.enc.Utf8);
+
+                        browserWindow.webContents.send('loadFile', originalTxt);
                     });
                 }
             }

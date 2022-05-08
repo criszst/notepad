@@ -1,7 +1,10 @@
 const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron');
+const crypto = require('crypto-js');
 
 const menuTemplate = require('./src/menu/menu');
 const { saveFile}  = require('./src/menu/menuTools');
+
+app.disableHardwareAcceleration();
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -28,8 +31,8 @@ function createWindow() {
 app.on('ready', createWindow);
 
  ipcMain.on('txtInArea', function(event, arg) {
-     console.log(arg);
-     saveFile(`${arg}`);
+     const cript = crypto.AES.encrypt(arg, 'Ha7vWAzxAe2VPEv5s/SrWsFwATIWNxFHYp+eEcWnyHI=').toString();
+     saveFile(`${cript}`);
 });
 
 app.on('window-all-closed', () => {
