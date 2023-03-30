@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
@@ -17,47 +16,53 @@
 
     <link href="../assets/style/website.css" rel="stylesheet">
 
-    <title>Login</title>
+    <title>Criar Senha</title>
 </head>
 
 <body class="bodyMain">
+
     <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#login"
         style="visibility: hidden;" id="btnModal"></button>
 
     <div class="modal animate__animated animate__fadeInLeft" id="login" data-mdb-backdrop="static"
-        data-mdb-keyboard="false" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true" >
+        data-mdb-keyboard="false" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginLabel">Login</h5>
+                    <h5 class="modal-title" id="loginLabel">Criar Senha</h5>
                 </div>
 
                 <div class="modal-body">
                     <div class="form-outline">
                         <input type="password" id="pssword" class="form-control" />
-                        <label class="form-label" for="password">Senha</label>
-                        <div class="invalid-feedback" style="margin-top: 1.5%;" id="invalidPssword">Senha incorreta.</div>
-                      </div>
-                      <div>
-                        <button class="btn btn-success btn-rounded" style="margin-left: 81%; margin-top: 1%;" id="btnLogin">Entrar</button>
-                      </div>
+                        <label class="form-label" for="password">Insira uma senha</label>
+                    </div>
+                    <div>
+                        <button class="btn btn-success btn-rounded" style="margin-left: 73%; margin-top: 5%"
+                            id="btnCreate">Criar Senha</button>
+                    </div>
 
                 </div>
 
             </div>
         </div>
     </div>
+</div>
 
 </body>
+
+<!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
 
-<script src="../assets/script/login.js"></script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function (e) {
-        document.getElementById('btnModal').click()
+<script type="module">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("btnModal").click()
     })
 </script>
+
+<script src="../assets/script/renderer.js"></script>
 
 </html>

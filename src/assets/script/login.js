@@ -3,7 +3,7 @@ document.getElementById('btnLogin').addEventListener('click', () => {
     const invalid = document.getElementById('invalidPssword');
     const modal = document.getElementById('login');
     
-    if (pssword.value === '123') {
+    if (pssword.value === '') {
         modal.classList.remove('animate__fadeInLeft');
 
         modal.classList.add('animate__fadeOutRight');

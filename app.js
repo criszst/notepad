@@ -4,7 +4,6 @@ const crypto = require('crypto-js');
 const menuTemplate = require('./src/menu/menu');
 const { saveFile}  = require('./src/menu/menuTools');
 
-app.disableHardwareAcceleration();
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -14,6 +13,7 @@ function createWindow() {
             nodeIntegration: true,
             textAreasAreResizable: false,
             contextIsolation: false,
+            enableRemoteModule: true,
         },
         movable: true,
         fullscreenable: true,
@@ -24,9 +24,11 @@ function createWindow() {
     let menu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menu);
 
-    win.loadFile('src/pages/login.html');
+    win.loadFile('src/pages/createPssword.html');
+
 
 }
+
 
 app.on('ready', createWindow);
 
