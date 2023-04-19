@@ -1,5 +1,6 @@
-const { app, BrowserWindow, Menu, ipcMain, shell } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, shell, webContents } = require('electron');
 const crypto = require('crypto-js');
+const fs = require('fs');
 
 const menuTemplate = require('./src/menu/menu');
 const { saveFile}  = require('./src/menu/menuTools');
@@ -24,9 +25,14 @@ function createWindow() {
     let menu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menu);
 
-    win.loadFile('src/pages/createPssword.html');
+    var file = 'C:/Users/adria/Downloads/pssword.txt';
+    var loadPage = 'src/pages/createPssword.html';
 
+if (fs.existsSync(file)) loadPage = 'src/pages/index.html';
 
+    win.webContents.send('verifyAccount', 'conta logada com sucesso.');
+
+    win.loadFile(loadPage);
 }
 
 
