@@ -10,6 +10,7 @@ function createWindow() {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
+        icon: 'src/assets/Images/iconNotepad.ico',
         webPreferences: {
             nodeIntegration: true,
             textAreasAreResizable: false,
