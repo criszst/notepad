@@ -3,7 +3,7 @@ const crypto = require('crypto-js');
 const fs = require('fs');
 
 const menuTemplate = require('./src/menu/menu');
-const { saveFile}  = require('./src/menu/menuTools');
+const { saveFile } = require('./src/menu/menuTools');
 
 
 function createWindow() {
@@ -21,17 +21,17 @@ function createWindow() {
         fullscreenable: true,
     });
 
+    win.toggleDevTools();
+
     shell.beep();
 
     let menu = Menu.buildFromTemplate(menuTemplate);
     Menu.setApplicationMenu(menu);
 
-    var file = 'C:/Users/adria/Downloads/pssword.txt';
+    var file = `${app.getAppPath()}/unname.txt`;
     var loadPage = 'src/pages/createPssword.html';
 
-if (fs.existsSync(file)) loadPage = 'src/pages/index.html';
-
-    win.webContents.send('verifyAccount', 'conta logada com sucesso.');
+    if (fs.existsSync(file)) loadPage = 'src/pages/index.html';
 
     win.loadFile(loadPage);
 }
@@ -39,9 +39,9 @@ if (fs.existsSync(file)) loadPage = 'src/pages/index.html';
 
 app.on('ready', createWindow);
 
- ipcMain.on('txtInArea', function(event, arg) {
-     const cript = crypto.AES.encrypt(arg, 'Ha7vWAzxAe2VPEv5s/SrWsFwATIWNxFHYp+eEcWnyHI=').toString();
-     saveFile(`${cript}`);
+ipcMain.on('txtInArea', function (event, arg) {
+    const cript = crypto.AES.encrypt(arg, 'Ha7vWAzxAe2VPEv5s/SrWsFwATIWNxFHYp+eEcWnyHI=').toString();
+    saveFile(`${cript}`);
 });
 
 app.on('window-all-closed', () => {

@@ -46,12 +46,13 @@ rel="stylesheet"
 <script src="../assets/libsConfig/all.js"></script>
 
 <script>
-const ipcRenderer = require('electron').ipcRenderer
-ipcRenderer.on('verifyAccount', (event, data) => {
-    alert('teste')
+ const ipcRenderer = require("electron").ipcRenderer
+
+ ipcRenderer.on('verifyAccount', function(event, data) {
+  alert(data)
   })
   
-  ipcRenderer.on('loadFile', (event, data) => {
+  ipcRenderer.on('loadFile', function(event, data) {
     document.getElementsByClassName('ql-editor')[0].innerHTML = data
   })
 
