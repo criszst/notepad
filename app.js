@@ -31,7 +31,7 @@ function createWindow() {
     var file = `${app.getAppPath()}/unname.txt`;
     var loadPage = 'src/pages/createPssword.html';
 
-    if (fs.existsSync(file)) loadPage = 'src/pages/index.html';
+    if (fs.existsSync(file)) loadPage = 'src/pages/login.html';
 
     win.loadFile(loadPage);
 }

@@ -13,7 +13,7 @@ btn.addEventListener('click', () => {
         }  else {
             dialog.showMessageBox({
                 message: 'Erro ao salvar o arquivo',
-                buttons: ['é foda'],
+                buttons: ['muito burro'],
                 type: 'error',
             });
         }
