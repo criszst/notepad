@@ -3,7 +3,8 @@ Um simples bloco de notas
 
 <div>
   Dark Mode
-  ![notepad-printscreen](https://github.com/Cristi4nSt/notepad/assets/56496903/8f99acfa-b774-4da8-8958-48ca86e4bc50)
+  ![notepad-printscreen](https://github.com/Cristi4nSt/notepad/assets/56496903/d6bb8ef7-adf1-4a6c-8048-74b3a12f5646)
+
 
 
   Light Mode
