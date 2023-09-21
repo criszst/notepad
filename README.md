@@ -1,6 +1,6 @@
 # notepad
 Um simples bloco de notas feito em Node Js com o framework [Electron](https://www.electronjs.org/pt/)
-\n
+<br>
 Também utilizei o [Quill](https://quilljs.com) para fazer o editor de texto.
 
 <div>
