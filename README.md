@@ -3,8 +3,7 @@ Um bloco de notas feito em Node Js com o framework [Electron](https://www.electr
 <br>
 
 # Dependencias
-> [Quill](https://quilljs.com) para fazer o editor de texto
-<br>
+> [Quill](https://quilljs.com) para fazer o editor de texto<br>
 > [Eslint](https://eslint.org) para boas praticas no código
 
 <div>
