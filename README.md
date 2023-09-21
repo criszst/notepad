@@ -1,9 +1,12 @@
-# notepad
-Um simples bloco de notas feito em Node Js com o framework [Electron](https://www.electronjs.org/pt/)
+# Resumo
+Um bloco de notas feito em Node Js com o framework [Electron](https://www.electronjs.org/pt/)
 <br>
-Também utilizei o [Quill](https://quilljs.com) para fazer o editor de texto.
+
+#Dependencias
+> [Quill](https://quilljs.com) para fazer o editor de texto
+> [Eslint](https://eslint.org) para boas praticas no código
 
 <div>
-  Dark Mode
-
+Modo escuro no notepad
+<br>
 ![notepad-printscreen](https://github.com/Cristi4nSt/notepad/assets/56496903/5137c38e-cc71-430f-a64d-fd04803970f3)
