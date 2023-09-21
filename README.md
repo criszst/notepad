@@ -3,7 +3,7 @@ Um simples bloco de notas
 
 <div>
   Dark Mode
-  ![notepad-printscreen](https://github.com/Cristi4nSt/notepad/assets/56496903/d6bb8ef7-adf1-4a6c-8048-74b3a12f5646)
+  <img href="https://github-production-user-asset-6210df.s3.amazonaws.com/56496903/269757556-d6bb8ef7-adf1-4a6c-8048-74b3a12f5646.png">
 
 
 
