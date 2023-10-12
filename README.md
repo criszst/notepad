@@ -6,9 +6,9 @@ Dark Mode
 Um pequeno bloco de notas feito em Node Js com o framework Electron.
 
 # Funções
-O app salva um arquivo (criptografando o texto dele, impedindo de outras pessoas veremm o conteudo)
+O app salva um arquivo criptografando o texto dele, impedindo de outras pessoas verem o conteudo.
 
-Posteriormente, você consegue abrir esse arquivo no proprio aplicativo (na qual o proprio app ja descriptografa o texto embutido no arquivo)
+Posteriormente, se você abrir o mesmo arquivo no aplicativo ele vai descriptografar todo o texto que estava lá.
 <br>
 
 # Dependências
