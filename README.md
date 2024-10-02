@@ -3,15 +3,15 @@ Dark Mode
 ![notepad-printscreen](https://github.com/Cristi4nSt/notepad/assets/56496903/5137c38e-cc71-430f-a64d-fd04803970f3)
 
 # Resumo
-Um pequeno bloco de notas feito em Node Js com o framework Electron.
+A small notebook made in Node Js with the Electron framework.
 
 # Funções
-O app salva um arquivo criptografando o texto dele, impedindo de outras pessoas verem o conteudo.
+The app saves a file by encrypting its text, preventing other people from seeing its contents.
 
-Posteriormente, se você abrir o mesmo arquivo no aplicativo ele vai descriptografar todo o texto que estava lá.
+Later, if you open the same file in the app, it will decrypt all the text that was there.
 <br>
 
 # Dependências
-- [Electron](https://www.electronjs.org/pt/) - contruir o aplicativo desktop.
-- [Quill](https://quilljs.com) - editor de texto.
-- [Eslint](https://eslint.org) - boas praticas no código.
+- [Electron](https://www.electronjs.org/pt/) - builds the desktop application.
+- [Quill](https://quilljs.com) - text editor
+- [Eslint](https://eslint.org) - good things on the code
